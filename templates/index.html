@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<title>PyBank App</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="icon" href="{{ url_for('static', filename='favicon.png')}}">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size: 18px;}
+img {margin-bottom: 0px;}
+</style>
+<body class="w3-content w3-black" width="500" height="800";>
+<!-- Header -->
+<div class="w3-padding-64 w3-white w3-center">
+  <div class="w3-row-padding">  
+    <div class="w3-">
+      <div>
+    	<img class="w3-image" src="{{ url_for('static', filename='logo_main.png')}}" width="300" height="200">
+  	  </div> 
+      <h1 class="w3-text-red"><b>PyBank Lightweight Web App</b></h1>      
+      <h1 class="w3-text"><b>How to use?</b></h1>
+      <p class="w3-text"> Choose one of the methods below.</p>
+      <p class="w3-text"> You can check currency right now.</p>
+      <p class="w3-text"> Or grab some historical data starting from December 1, 2014 year.</p>
+    </div>
+  </div>
+</div>
+<!-- API methods -->
+    <div class="w3-half w3-section">
+      <ul class="w3-ul w3-card w3-center">           
+        <li class="w3-white w3-padding-24">                                          
+        <button class="w3-button w3-black">
+        <a href="/currency_rate">Get Currency Now</a>
+        </button>        
+        </li>
+      </ul>
+    </div>
+    <div class="w3-half w3-section">
+      <ul class="w3-ul w3-card w3-center">           
+        <li class="w3-white w3-padding-24">
+          <form action = "/currency_history" method = "POST">
+          <input type="date" name="date" format="dd/mm/yyyy" placeholder="DD-MM-YYYY">
+          <p><input class="w3-button w3-black" type = "submit" value = "Get Currency History"/></p>
+          </form>     
+        </li>
+      </ul>     
+      </div>
+     </form> 
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-white w3-center w3-xlarge">
+  <div class="w3-section">
+    <h3 class="w3-text">Created by Kirill Rudenko</h3>
+    <a target="_blank" href="https://www.instagram.com/d.e.v.2.n.u.l.l/"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+    <a href="https://github.com/swifty94"><i class="fa fa-github w3-hover-opacity"></i></a>
+    <a href="https://www.linkedin.com/in/kirill-rudenko/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+  </div>
+</footer>
+</body>
+</html>

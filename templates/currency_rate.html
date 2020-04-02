@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<title>PyBank App</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="icon" href="{{ url_for('static', filename='favicon.png')}}">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size: 18px;}
+img {margin-bottom: 0px;}
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+<body class="w3-content w3-black" width="500" height="800";>
+
+
+<!-- Header -->
+<div class="w3-padding-64 w3-white w3-center">
+  <div class="w3-row-padding">  
+    <div class="w3-">
+      <div>
+        <img class="w3-image" src="{{ url_for('static', filename='logo_main.png')}}" width="300" height="200">
+      </div> 
+      <h1 class="w3-text-red"><b>PyBank Lightweight Web App</b></h1>
+      <h1 class="w3-text"><b>Currency rate on {{ localtime }}</b></h1>    
+      <div class="w3-center w3-padding-64">
+      	<table style="width:100%">
+		   <tr>
+		    <th>Currency name</th>
+		    <th>Sale rate</th> 
+		    <th>Buy rate</th>
+		  </tr>
+		  {% for x,y,z in result %}		  
+ 			<tr>
+                        <td>{{ x }}</td>
+                        <td>{{ y }}</td>
+                        <td>{{ z }}</td>
+            </tr>
+        {% endfor %}       
+		</table>                      
+    </div>
+<footer class="w3-container w3-padding-32 w3-white w3-center w3-xlarge">
+  <div class="w3-section">
+    <a target="_blank" href="https://www.instagram.com/d.e.v.2.n.u.l.l/"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+    <a href="https://github.com/swifty94"><i class="fa fa-github w3-hover-opacity"></i></a>
+    <a href="https://www.linkedin.com/in/kirill-rudenko/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+  </div>
+</footer>
+</body>
+</html>
